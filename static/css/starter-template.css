@@ -46,3 +46,12 @@ body {
 .grey-text {
   color: #acacac;
 }
+#article-list {
+  list-style-type: none;
+  padding: 0;
+}
+.article-list-time {
+  color: #aaa;
+  font-family: Monaco, "Courier New", monospace;
+  font-size: 75%;
+}
