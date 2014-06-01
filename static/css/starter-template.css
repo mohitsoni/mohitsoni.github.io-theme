@@ -1,0 +1,48 @@
+body {
+  padding-top: 50px;
+}
+.navbar-ms {
+	background-color: #000;
+}
+.container-ms {
+	background-color: #242424;
+  margin: 0 auto;
+  width: 100%;
+}
+.mohit {
+  	/*padding: 20px 400px;*/
+  	text-align: left;
+  	color: #BBB;
+  	min-height: 280px;
+}
+.mohit h2 {
+	color: #FFF;
+	font-size: 1.6em;
+	font-weight: bold;
+}
+.mohit a {
+	text-decoration: none;
+	color: #FFF;
+}
+.mohit ul {
+	list-style-type: disc;
+	font-size: 1.2em;
+	padding-left:0;
+}
+.intro {
+	font-size: 1.1em;
+	padding-top: 20px;
+}
+.footer-ms {
+	background-color: #000;
+	color: #acacac;
+	text-align: center;
+	font-size: 0.8em;
+	padding-top: 10px;
+}
+.debug {
+	border: 1px solid red;
+}
+.grey-text {
+  color: #acacac;
+}

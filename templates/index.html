@@ -2,25 +2,88 @@
 {% block content %}
 <section id="content">
 {% block content_title %}
-<h2>All articles</h2>
+<div class="container container-ms">
+  <div class="row banner">
+    <div class="col-md-3 col-md-offset-3">
+      <img src="{{ SITEURL }}/theme/images/mohit.png" />
+    </div><!-- /.col6 -->
+    <div class="col-md-3">
+      <div class="mohit" itemscope itemtype="http://data-vocabulary.org/Person">
+        <h2 itemprop="name">Mohit Soni</h2>
+        <ul class="bio">
+          <li><a href="http://www.linkedin.com/in/sonimohit">Engineer</a> at eBay</li>
+          <li><a href="http://github.com/mohitsoni">Open Source</a></li>
+        </ul>
+      </div><!-- /.mohit -->
+    </div><!-- /.col3 -->
+  </div><!-- /.row /.banner -->
+</div><!-- /.container -->
+
+<div class="container intro">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <p>
+        Mohit Soni is an engineer on Platform team at eBay. He spends time on maximizing efficiency, increasing agility, reducing cost of operations, and most importantly <em>getting stuff done</em>.
+      </p>
+    </div>
+  </div>
+</div><!-- /.container -->
+
+<div class="container articles">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <h4>Articles</h4>
+      <ul id="post-list">
+        {% for article in articles_page.object_list %}
+          <li><article class="hentry">
+            <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a>
+          </article></li>
+        {% endfor %}
+      </ul><!-- /#posts-list -->
+    </div>
+  </div>
+</div><!-- /.container ./projects-->
+
+<div class="container projects">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <h4>Projects</h4>
+      <ul>
+        <li><a href="http://github.com/ebay/cors-filter">Reference implementation of W3C CORS Filter</a></li>
+        <li><a href="http://tomcat.apache.org/tomcat-7.0-doc/config/filter.html#CORS_Filter">Contributed CORS Filter in Apache Tomcat</a></li>
+        <li><a href="http://github.com/jenkinsci/mesos-plugin">Mesos Jenkins plugin</a></li>
+        <li><a href="http://github.com/mohitsoni">Other Projects</a></li>
+      </ul>
+    </div>
+  </div>
+</div><!-- /.container ./projects-->
+
+<div class="container talks">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <h4>Talks</h4>
+      <ul>
+        <li><a href="http://www.slideshare.net/harrythewiz/hadoop-101-mohit-soni-bar-camp-chennai">Hadoop 101</a> <span class="grey-text">(Barcamp)</span></li>
+        <li><a href="http://www.slideshare.net/ydn/ahis2011-application-hadoop-avatar-at-ebay">Hadoop Avatar at eBay</a> <span class="grey-text">(Apache Hadoop India Summit)</span></li>
+      </ul>
+    </div>
+  </div>
+</div><!-- /.container ./talks-->
+
+<div class="container publications">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <h4>Publications / Articles</h4>
+      <ul>
+        <li><a href="http://www.ijcaonline.org/journal/number24/pxc387716.pdf">Flare: Architecture for rapid and easy development of Internet-based Applications</a></li>
+        <li><a href="http://www.scribd.com/doc/68909473/Cheatsheet-Performance-Principles-Patterns-and-Anti-Patterns">Cheat Sheet - Performance Principles, Patterns and Anti-Patterns
+</a></li>
+      </ul>
+    </div>
+  </div>
+</div><!-- /.container ./talks-->
 {% endblock %}
 
-<ol id="post-list">
-{% for article in articles_page.object_list %}
-        <li><article class="hentry">
-                <header> <h2 class="entry-title"><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a></h2> </header>
-                <footer class="post-info">
-                    <abbr class="published" title="{{ article.date.isoformat() }}"> {{ article.locale_date }} </abbr>
-                    <address class="vcard author">By
-                    {% for author in article.authors %}
-                        <a class="url fn" href="{{ SITEURL }}/{{ author.url }}">{{ author }}</a>
-                    {% endfor %}
-                    </address>
-                </footer><!-- /.post-info -->
-                <div class="entry-content"> {{ article.summary }} </div><!-- /.entry-content -->
-        </article></li>
-{% endfor %}
-</ol><!-- /#posts-list -->
 {% include 'pagination.html' %}
 </section><!-- /#content -->
 {% endblock content %}
